@@ -1,10 +1,9 @@
-# Starter folder
+# Beauty Standard and employement
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
+This repo provides analysis of a data set to see if there is the relationship between beauty and employment and how does it impacting for hiring process.
 
-To use this folder, click the green "Code" button", then "Download ZIP". Move the downloaded folder to where you want to work on your own computer, and then modify it to suit.
 
 
 ## File Structure
