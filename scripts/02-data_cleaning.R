@@ -1,14 +1,15 @@
 #### Preamble ####
 # Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Author: Sky Suh
+# Date: 28 March 2024
+# Contact: sky.suh@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
+# Pre-requisites: Need to have manually downloaded the data
 # Any other information needed? [...UPDATE THIS...]
 
 #### Workspace setup ####
 library(tidyverse)
+library(arrow)
 
 #### Clean data ####
 raw_data <- read_csv("inputs/data/plane_data.csv")
@@ -41,4 +42,4 @@ cleaned_data <-
   tidyr::drop_na()
 
 #### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+write_parquet(cleaned_data, "data/data/analysis_data.csv")

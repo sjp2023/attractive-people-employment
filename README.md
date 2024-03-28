@@ -1,16 +1,17 @@
-# Beauty Standard and employement
+# Attractive people and employement
 
 ## Overview
 
 This repo provides analysis of a data set to see if there is the relationship between beauty and employment and how does it impacting for hiring process.
 
-
+## Obtaining raw data
+The data need to be downloaded from Scholar paper and data set paper as CSV file. This is done manually and then moved to `data/raw_data`.
 
 ## File Structure
 
 The repo is structured as:
 
--   `data/raw_data` contains the raw data as obtained from X.
+-   `data/raw_data` contains the raw data as obtained from csv file.
 -   `data/analysis_data` contains the cleaned dataset that was constructed.
 -   `model` contains fitted models. 
 -   `other` contains relevant literature, details about LLM chat interactions, and sketches.
@@ -20,4 +21,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatHorse and the entire chat history is available in inputs/llms/usage.txt.
+No LLMs were used.

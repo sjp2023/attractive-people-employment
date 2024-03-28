@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
+# Purpose: Tests the real analysis data based on our expectation from
 # Author: Rohan Alexander [...UPDATE THIS...]
 # Date: 11 February 2023 [...UPDATE THIS...]
 # Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
@@ -10,6 +10,8 @@
 
 #### Workspace setup ####
 library(tidyverse)
+library(arrow)
 # [...UPDATE THIS...]
 
 #### Test data ####
+analysis_data<-read_parquet
