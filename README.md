@@ -1,4 +1,4 @@
-# How does attractiveness of people will impact on employment
+# How does the attractiveness of people impact on employment
 
 ## Overview
 
