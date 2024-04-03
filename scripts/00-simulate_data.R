@@ -14,23 +14,19 @@ library(tibble)
 simulated_data <-
   tibble(
     certainty = runif(n = 1000, min = 0, max = 11) |> floor (),
-    guessed_correct = runif(n = 1000, min = 0, max = 11) |> floor (),
+    attractiveness_employment = runif(n = 1000, min = 0, max = 11) |> floor (),
   )
 
 #### Simulate data set of relationship between educational attractiveness and employment####
 
 #### Simulate data set of relationship between gender attractiveness and employment####
 
-
-### Add tests for simulated data ###
-# Expect that guessed_correct is only ever 0 or 1.
-max(simulated_data$certainity) == 1
-min(simulated_data$certainity) == 0
-any(unique(simulated_data$certainity) == c(0:1)
+# Expect that attractiveness_employment is only ever 0 or 1.
+max(simulated_data$certainty) == 1
+min(simulated_data$certainty) == 0
 
 # Expect that certainty is only ever an integer 0 to 10, inclusive.
-max(simulated_data$certainity) == 10
-min(simulated_data$certainity) == 0
-any(unique(simulated_data$certainity) == c(0:18)
+max(simulated_data$certainty) == 10
+min(simulated_data$certainty) == 0
     
 
