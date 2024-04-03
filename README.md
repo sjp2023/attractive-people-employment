@@ -1,11 +1,15 @@
-# Attractive people and employement
+
+# Attractive people, Attractive jobs
+=======
+# Analysis of unveilling the influence of attractiveness on Employement in the United States
+>>>>>>> 0852e97a9c88ed76752895727525b5360418a74a
 
 ## Overview
 
-This repo provides analysis of a data set to see if there is the relationship between beauty and employment and how does it impacting for hiring process.
+This repo provides analysis of a data set with the code to see if there is the relationship between beauty/ or attractiveness and employment and how does it impacting for hiring process in the United States of America.
 
 ## Obtaining raw data
-The data need to be downloaded from Scholar paper and data set paper as CSV file. This is done manually and then moved to `data/raw_data`.
+The data need to be downloaded from Replication Scholar paper data set as CSV file. This is done manually and then moved to `data/raw_data`.
 
 ## File Structure
 

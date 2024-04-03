@@ -1,14 +1,13 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
-author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
-date: today
-date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+title: "Attractive people, Attractive jobs "
+subtitle: "Analysis of unveilling the influence of attractiveness on Employement in the United States"
+author: Sky Suh
+thanks: "Code and data are available at: https://github.com/sjp2023/beauty-standard.git"
+date: "`r Sys.time()`"
+date-format: "D MMMM YYYY"
+abstract: "This paper is explored the influence of attractiveness on Employment regarding other subjects such as charactersitics, skills that individual had but by measuring the relationships with the attraictveness of physical, educational and gender for the hiring process and employments of the success. Using the data from the public dataverse source based on the paper, we found that the attractiveness impacts on employments and having higher chance to be succeed in both hriing process and careers. This paper provides how does the attractiveness of people impact on employment and the importance of the hughe biased based on the attracitveness only."
 format: pdf
+toc: TRUE
 number-sections: true
 bibliography: references.bib
 ---
@@ -21,17 +20,25 @@ bibliography: references.bib
 library(tidyverse)
 library(palmerpenguins)
 library(arrow)
+library(janitor)
+library(ggplot2)
+library(knitr)
+library(dplyr)
+library(readr)
 ```
 
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
+Beauty, as the attractiveness, becomes the standard of everything in the modern society as evolving into a global conversation from body shapes, flawless skin to ideal face which influences towards individual and social-cultural perspectives. Theses standards are being as the measurements with ourselves and others. For a long time, attractiveness provides the important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting the people for the first time and may have the stereotype of what is the person like. Furthermore, these attractiveness of people influence individuals' educations, gender not only viewing the physical shapes. As a result, these types of attractiveness are creating the bias particularly in the employment. The attractive workers earn 10 to 15 percents more than average or low-looking groups [@Chand 2023]. Even in the diverse environmental workforce of the United states, the interplay between personal attractiveness and professional success has deeply connected. The way of attractiveness could shape and lead the outcome of employment has created by the society and raised the interest among scholars, researchers, and generally regarding the impact of those connection [@Ruffle 2015].
 
-The remainder of this paper is structured as follows. @sec-data....
+This paper investigates the importance of the relationship between attractiveness people and employments for both hiring process and succeed in the United States where the land of diversity and opportunity. I utilized data set from 2023 U.S. data from "University of Toronto Dataverse of Borealis" to conduct the data and analyze the connection with attractiveness people and employments regarding gender, physical and education. The estimand explored from this paper is, how does the attractiveness of people impact on employment with measured for 1 and 0 of classification 1 for being yes, 0 being no with physical, educational and gender attractiveness with the employment correlations. 
 
+Key variables found from this analysis are 2023 data of the employment rates with the physical, educational and gender attractiveness regardless individual's skills, personalities and techniques that may support for being success in the positions in U.S., as it needs to be filled a clear gap of how does attractiveness influenced the hiring process and being employed in the organization. So far, we found the attractiveness will impact for the employment regarding skills, characteristics that may be the outlines for the research and how does it impacts on composite, interview and offers but with our focused area, we were interested attractiveness and employments rate. The findings in this paper is highlighted deep connection with the beauty/attractiveness and employments in the U.S. as well as the importance points since the beauty will effect on individual's first impression and provides others' feelings and stereotype itself. By understanding this relations, it will help to acknowledge the wrong side of the society and may provide the solutions towards the researchers and policymakers or in general to provide the right facts of attractiveness and employments. 
 
+This paper is structured into the following sections: Section 2 as Data with Data Measurement, Source, and each data sets of Physical Attractiveness, Educational Attractiveness, Gender Attractiveness, and Section 3 as Model presenting the linear regression model to justify and predict the relationships between the attractiveness and employments; Section 4 shown Results of the analysis data of model linear regression graph and Section 5 providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
 
+ 
 # Data {#sec-data}
 
 Some of our data is of penguins (@fig-bills), from @palmerpenguins.
@@ -70,9 +77,11 @@ analysis_data |>
   labs(x = "Wing width (mm)",
        y = "Wing length (mm)")
 ```
-
-Talk way more about it. 
-
+## Data Measurement
+## Source
+## Physical Attractiveness Dataset
+## Educational Attractiveness Dataset
+## Gender Attractiveness Dataset
 
 
 # Model
@@ -191,26 +200,6 @@ posterior_vs_prior(first_model) +
   coord_flip()
 ```
 
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
-```
 
 
 
