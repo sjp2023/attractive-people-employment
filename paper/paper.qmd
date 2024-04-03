@@ -5,7 +5,7 @@ author: Sky Suh
 thanks: "Code and data are available at: https://github.com/sjp2023/beauty-standard.git"
 date: "`r Sys.time()`"
 date-format: "D MMMM YYYY"
-abstract: "This paper is explored the influence of attractiveness on Employment regarding other subjects such as charactersitics, skills that individual had but by measuring the relationships with the attraictveness of physical, educational and gender for the hiring process and employments of the success. Using the data from the public dataverse source based on the paper, we found that the attractiveness impacts on employments and having higher chance to be succeed in both hriing process and careers. This paper provides how does the attractiveness of people impact on employment and the importance of the hughe biased based on the attracitveness only."
+abstract: "This paper is explored the influence of attractiveness on Employment regarding other subjects such as charactersitics, skills that individual had but by measuring the relationships with the attraictveness of physical, educational and gender for the hiring process and employments of the success. Using the data from the public dataverse source based on the paper, we found that the attractiveness impacts on employments and having higher chance to be succeed in both hriing process and careers. This paper provides how does the attractiveness of people impact on employment and the importance of the hughe biased based on the only attracitveness to predict whether attriactveness still deeply connects with the careers "
 format: pdf
 toc: TRUE
 number-sections: true
@@ -20,17 +20,14 @@ bibliography: references.bib
 library(tidyverse)
 library(palmerpenguins)
 library(arrow)
-library(janitor)
 library(ggplot2)
-library(knitr)
-library(dplyr)
-library(readr)
+
 ```
 
 
 # Introduction
 
-Beauty, as the attractiveness, becomes the standard of everything in the modern society as evolving into a global conversation from body shapes, flawless skin to ideal face which influences towards individual and social-cultural perspectives. Theses standards are being as the measurements with ourselves and others. For a long time, attractiveness provides the important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting the people for the first time and may have the stereotype of what is the person like. Furthermore, these attractiveness of people influence individuals' educations, gender not only viewing the physical shapes. As a result, these types of attractiveness are creating the bias particularly in the employment. The attractive workers earn 10 to 15 percents more than average or low-looking groups [@Chand 2023]. Even in the diverse environmental workforce of the United states, the interplay between personal attractiveness and professional success has deeply connected. The way of attractiveness could shape and lead the outcome of employment has created by the society and raised the interest among scholars, researchers, and generally regarding the impact of those connection [@Ruffle 2015].
+Beauty, as the attractiveness, becomes the standard of everything in the modern society as evolving into a global conversation from body shapes, flawless skin to ideal face which influences towards individual and social-cultural perspectives. Theses standards are being as the measurements with ourselves and others. For a long time, attractiveness provides the important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting the people for the first time and may have the stereotype of what is the person like. Furthermore, these attractiveness of people influence individuals' educations, gender not only viewing the physical shapes. As a result, these types of attractiveness are creating the bias particularly in the employment. The attractive workers earn 10 to 15 percents more than average or low-looking groups [@Chand 2023]. Even in the diverse environmental workforce of the United states, the interplay between personal attractiveness and professional success has deeply connected. The way of attractiveness could shape and lead the outcome of employment has created by the society and raised the interest among scholars, researchers, and generally regarding the impact of those connection [@Ruffle 2014].
 
 This paper investigates the importance of the relationship between attractiveness people and employments for both hiring process and succeed in the United States where the land of diversity and opportunity. I utilized data set from 2023 U.S. data from "University of Toronto Dataverse of Borealis" to conduct the data and analyze the connection with attractiveness people and employments regarding gender, physical and education. The estimand explored from this paper is, how does the attractiveness of people impact on employment with measured for 1 and 0 of classification 1 for being yes, 0 being no with physical, educational and gender attractiveness with the employment correlations. 
 
@@ -41,42 +38,7 @@ This paper is structured into the following sections: Section 2 as Data with Dat
  
 # Data {#sec-data}
 
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
 
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
-
-analysis_data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
-```
 ## Data Measurement
 ## Source
 ## Physical Attractiveness Dataset
@@ -86,64 +48,7 @@ analysis_data |>
 
 # Model
 
-The goal of our modelling strategy is twofold. Firstly,...
 
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
-
-## Model set-up
-
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
-
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
-\end{align}
-
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
-
-
-### Model justification
-
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
-
-Our results are summarized in @tbl-modelresults.
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-
-library(rstanarm)
-
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
-```
 
 
 
@@ -167,39 +72,6 @@ Weaknesses and next steps should also be included.
 \appendix
 
 # Appendix {-}
-
-
-# Additional data details
-
-# Model details {#sec-model-details}
-
-## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
-
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
-```
-
 
 
 
