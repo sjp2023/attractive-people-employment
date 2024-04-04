@@ -44,7 +44,7 @@ This paper is structured into the following sections: Section 2 as Data with Dat
 ## Data Measurement
 This paper utilizes based on the R, as the statistical Programming language [@citeR], 
 ## Source
-This dataset was collected the information by survey randomly from the United States in 202 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" to get the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments. 
+This dataset was collected the information by survey randomly from the United States in 2023 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" to get the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments. 
 
 ## Physical Attractiveness Dataset
 The physical attractiveness .vs employment dataset, represented below in @tbl-1 is shown the relationship between each variable's physical attractiveness can correspond with the employments as higher status jobs and lower status jobs. This dataset, published by [
