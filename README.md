@@ -11,16 +11,6 @@ This repo provides analysis of a data set with the code to see if there is the r
 
 ## Obtaining raw data
 The data need to be downloaded from Replication Scholar paper data set as CSV file. This is done manually and then moved to `data/raw_data`.
-=======
-# How does the attractiveness of people impact on employment
-
-## Overview
-
-This repo provides analysis of a data set to see if there is the relationship between beauty and employment and how does it impacting for hiring process.
-
-## Obtaining raw data
-The data need to be downloaded from Scholar paper and data set paper as CSV file. This is done manually and then moved to `data/raw_data`.
->>>>>>> 1e163ed6f39835b3e109fa62d95d2155e15bf0db
 
 ## File Structure
 
@@ -37,7 +27,4 @@ The repo is structured as:
 ## Statement on LLM usage
 
 No LLMs were used.
-<<<<<<< HEAD
-=======
 
->>>>>>> 1e163ed6f39835b3e109fa62d95d2155e15bf0db
