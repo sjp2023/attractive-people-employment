@@ -21,13 +21,17 @@ library(tidyverse)
 library(palmerpenguins)
 library(arrow)
 library(ggplot2)
+library(kableExtra)
+library(knitr)
 
 ```
 
+#### data parquet####
+analysis_data<-read_parquet(here::here("data/analysis_data/analysis_data.parquet"))
 
 # Introduction
 
-Beauty, as the attractiveness, becomes the standard of everything in the modern society as evolving into a global conversation from body shapes, flawless skin to ideal face which influences towards individual and social-cultural perspectives. Theses standards are being as the measurements with ourselves and others. For a long time, attractiveness provides the important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting the people for the first time and may have the stereotype of what is the person like. Furthermore, these attractiveness of people influence individuals' educations, gender not only viewing the physical shapes. As a result, these types of attractiveness are creating the bias particularly in the employment. The attractive workers earn 10 to 15 percents more than average or low-looking groups [@Chand 2023]. Even in the diverse environmental workforce of the United states, the interplay between personal attractiveness and professional success has deeply connected. The way of attractiveness could shape and lead the outcome of employment has created by the society and raised the interest among scholars, researchers, and generally regarding the impact of those connection [@Ruffle 2014].
+Beauty, as the attractiveness, becomes the standard of everything in the modern society as evolving into a global conversation from body shapes, flawless skin to ideal face which influences towards individual and social-cultural perspectives. Theses standards are being as the measurements with ourselves and others. For a long time, attractiveness provides the important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting the people for the first time and may have the stereotype of what is the person like. Furthermore, these attractiveness of people influence individuals' educations, gender not only viewing the physical shapes. As a result, these types of attractiveness are creating the bias particularly in the employment. The attractive workers earn 10 to 15 percents more than average or low-looking groups [@Chand]. Even in the diverse environmental workforce of the United states, the interplay between personal attractiveness and professional success has deeply connected. The way of attractiveness could shape and lead the outcome of employment has created by the society and raised the interest among scholars, researchers, and generally regarding the impact of those connection [@Ruffle].
 
 This paper investigates the importance of the relationship between attractiveness people and employments for both hiring process and succeed in the United States where the land of diversity and opportunity. I utilized data set from 2023 U.S. data from "University of Toronto Dataverse of Borealis" to conduct the data and analyze the connection with attractiveness people and employments regarding gender, physical and education. The estimand explored from this paper is, how does the attractiveness of people impact on employment with measured for 1 and 0 of classification 1 for being yes, 0 being no with physical, educational and gender attractiveness with the employment correlations. 
 
@@ -35,16 +39,60 @@ Key variables found from this analysis are 2023 data of the employment rates wit
 
 This paper is structured into the following sections: Section 2 as Data with Data Measurement, Source, and each data sets of Physical Attractiveness, Educational Attractiveness, Gender Attractiveness, and Section 3 as Model presenting the linear regression model to justify and predict the relationships between the attractiveness and employments; Section 4 shown Results of the analysis data of model linear regression graph and Section 5 providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
 
- 
 # Data {#sec-data}
 
-
 ## Data Measurement
+This paper utilizes based on the R, as the statistical Programming language [@citeR], 
 ## Source
+This dataset collected the information by survey randomly from the United States in 202 published by University of Toronto Dataverse as the part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" to get the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments. 
+
 ## Physical Attractiveness Dataset
+The physical attractiveness .vs employment dataset, represented below in @tbl-1 is shown the relationship between each variables' physical attractiveness can corresponds with the employments as higher status jobs and lower status jobs. This dataset, published by [
+@USA] as filed R Data updated by 2023, collects the information from the workers in the United States with the general survey to figure out the correlation whit the attractiveness and employments and how does each other influencing, particularly, the beauty of physical that most huge part of attractiveness that people will feel or get the impression easily.  
+```{r}
+#| label: tbl-1
+#| tbl-cap: The dataset containing physical attractiveness and the status of employment.
+#| echo: false
+#| warning: false
+
+head (cleaned_data, 10) |>
+  kable(
+    col.names = c("higherstatusjob", "lowerstatusjob","highlyattractive", "lessattractive"),
+  booktabs = TRUE
+  )
+
+```
+
 ## Educational Attractiveness Dataset
+The educational attractiveness dataset, showed below in @tbl-2, presents the relationships of educational attractiveness in which the elite university in this paper case to figure out having better status of jobs/hiring come from attractive as educationally. 
+```{r}
+#| label: tbl-2
+#| tbl-cap: The dataset containing educational attractiveness and the status of employment.
+#| echo: false
+#| warning: false
+
+head (cleaned_data, 10) |>
+  kable(
+    col.names = c("higheruni", "middleuni","loweruni", "highlyattractive", "lessattractive"),
+  booktabs = TRUE
+  )
+
+```
 ## Gender Attractiveness Dataset
 
+```{r}
+#| label: tbl-3
+#| tbl-cap: The dataset containing gender attractiveness and the status of employment.
+#| echo: false
+#| warning: false
+
+head (cleaned_data, 10) |>
+  kable(
+    col.names = c("male", "female", "highlyattractive", "lessattractive"),
+  booktabs = TRUE
+  )
+
+```
 
 # Model
 
