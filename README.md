@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-# Attractive people, Attractive jobs
-=======
 # Analysis of unveilling the influence of attractiveness on Employement in the United States
->>>>>>> 0852e97a9c88ed76752895727525b5360418a74a
 
 ## Overview
 
