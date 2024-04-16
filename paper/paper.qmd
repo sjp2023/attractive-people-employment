@@ -94,7 +94,25 @@ head (cleaned_data, 10) |>
 
 ```
 
-# Model
+```{r}
+#| message: false
+#| echo: false
+#| label: fig-physical
+#| fig-cap: Physical attractives .vs employment (2023)
+cleaned_data <- select(cleaned_data)
+
+
+cleaned_data %>%
+  ggplot(mapping = aes(x = highlyattractive, y = higherstatusjob)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Highly Attractive vs. Higher Status Job in 2023",
+    x = "Highly Attractive",
+    y = "Employment"
+  ) +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme_classic()
+
 
 
 
