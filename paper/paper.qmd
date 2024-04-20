@@ -23,6 +23,7 @@ library(arrow)
 library(ggplot2)
 library(kableExtra)
 library(knitr)
+library(dplyr)
 
 cleaned_data <- read_parquet(here::here("data/analysis_data/analysis_data.parquet"))
 ```
@@ -62,17 +63,17 @@ The physical attractiveness .vs employment dataset, represented below in @tbl-ph
 #| echo: false
 #| warning: false
 
-set.seed(112)
+library(kableExtra)
 
 cleaned_data |>
-  select(higherstatusjob, lowerstatusjob, highlyattractive, lessattractive) |>
   slice_sample(n = 10) |>
+  select(higherstatusjob, lowerstatusjob, highlyattractive, lessattractive) |>
   kable(
     col.names = c("higherstatusjob", "lowerstatusjob","highlyattractive", "lessattractive"),
   booktabs = TRUE
   )
-
 ```
+
 
 ## Educational Attractiveness Dataset
 The educational attractiveness dataset, showed below in @tbl-education, presents the relationships of educational attractiveness in which the elite university in this paper case to figure out having better status of jobs/hiring come from attractive as educationally. 
@@ -83,6 +84,8 @@ The educational attractiveness dataset, showed below in @tbl-education, presents
 #| echo: false
 #| warning: false
 
+library(kableExtra)
+
 cleaned_data |>
   slice_sample(n = 10) |>
   select(higheruni, middleuni,loweruni, highlyattractive, lessattractive) |>
@@ -92,6 +95,9 @@ cleaned_data |>
   )
 
 ```
+
+
+
 ## Gender Attractiveness Dataset
 
 ```{r}
@@ -100,13 +106,14 @@ cleaned_data |>
 #| echo: false
 #| warning: false
 
-cleaned_data|>
+cleaned_data |>
   slice_sample(n = 10) |>
-  select(male, female, highlyattractive, lessattractive) |> 
+  select(male, female, highlyattractive, lessattractive) |>
   kable(
     col.names = c("male", "female", "highlyattractive", "lessattractive"),
   booktabs = TRUE
   )
+slice
 
 ```
 
@@ -118,21 +125,43 @@ cleaned_data|>
 #| echo: false
 #| label: fig-physical
 #| fig-cap: Physical attractives .vs employment (2023)
-cleaned_data <- select(cleaned_data)
+library(ggplot2)
 
+# Assuming 'cleaned_data' is your dataset
+# You might need to adjust this code according to the structure of your dataset
 
-cleaned_data %>%
-  ggplot(mapping = aes(x = highlyattractive, y = higherstatusjob)) +
-  geom_bar(stat = "identity") +
+# Select 100 random observations from the dataset
+sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
+
+# Plot the bar graph
+ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatusjob), y = 1)) +
+  geom_bar(position = "stack", stat = "identity", color = "black") +
+  facet_wrap(~ lessattractive, nrow = 1) +
+  scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Highly Attractive vs. Higher Status Job in 2023",
-    x = "Highly Attractive",
-    y = "Employment"
+    title = "Correlation between Attractiveness and Employment Status",
+    x = "Attractiveness",
+    y = "Count"
   ) +
-  scale_fill_manual(values = c("blue", "red")) +
-  theme_classic()
+  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank()) 
 
 ```
+
+```{r}
+sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
+
+convert_to_text <- function(x) {
+  ifelse(x == 0, "less attractive", "attractive")
+}
+
+data <- data %>%
+  mutate(across(where(~all(. %in% c(0, 1))), convert_to_text))
+
+
+print(data)
+```
+
+
 
 # Discussion
 
@@ -160,5 +189,4 @@ Weaknesses and next steps should also be included.
 
 
 # References
-
 
