@@ -5,7 +5,7 @@ author: Sky Suh
 thanks: "Code and data are available at: https://github.com/sjp2023/beauty-standard.git"
 date: today
 date-format: long
-abstract: "This paper explores the influence of attractiveness on employment regarding other subjects such as characteristics, and skills that individuals had but by measuring the relationships with the attractiveness of physical, educational and gender for the hiring process and employment of the success. Using the data from the public dataverse source based on the paper, we found that attractiveness may effect employment and have a higher chance to be succeed in both hiring process and careers. This paper provides how does the attractiveness of people impact on employment and the importance of the huge biased based on only attractiveness to predict whether attractiveness still deeply connects with the careers"
+abstract: "This paper explores  the intricate dynamics between attractiveness and employment, examining how various factors such as individual characteristics, skills, and demographics intersect with physical appearance to influence the hiring process and subsequent career success. Leveraging data sourced from a public dataverse, our study reveals compelling insights into the role of attractiveness in shaping employment outcomes. Our findings suggest that attractiveness can significantly impact both the hiring process and long-term career trajectories, underscoring its relevance in contemporary employment landscapes. Furthermore, this paper underscores the importance of considering a broader spectrum of factors beyond attractiveness alone when predicting employment outcomes, shedding light on the pervasive biases that may arise from overly simplistic assessments."
 format: pdf
 toc: TRUE
 number-sections: true
@@ -38,24 +38,34 @@ This research paper investigates the importance of the relationship between attr
 
 Key variables found from this analysis are 2023 data of the employment rates with the physical, educational and gender attractiveness regardless of individual's skills, personalities and techniques that may support for being a success in the positions in the U.S., as it needs to be filled a clear gap of how does attractiveness influence the hiring process and being employed in the organization. So far, we found the attractiveness will effect the employment regarding skills, and characteristics that may be the outlines for the research and how it impacts on composite, interview and offers but with our focused area, we were interested in attractiveness and employment rate. The findings in this paper highlight a deep connection between beauty/attractiveness and employment in the U.S. as well as the importance points since beauty will affect an individual's first impression and provides others' feelings and stereotypes itself. By understanding this relation, it will help to acknowledge the wrong side of society and may provide solutions towards the researchers and policymakers or in general to provide the right facts of attractiveness and employment. 
 
-This paper is structured into the following sections: Section 2 as Data with Data Measurement, Data Source, and each data sets of Physical Attractiveness, Educational Attractiveness, Gender Attractiveness as presenting as table for simple and easy view of the data, and Section 3 shown as Results of the analysis data of dataset graph based on section 2 table dataset and Section 4 providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
+This paper is structured into the following sections: @sec-data as Data with Data Measurement, Data Source, and each data sets of Physical Attractiveness, Educational Attractiveness, Gender Attractiveness as presenting as table for simple and easy view of the data, and @sec-results shown as Results of the analysis data of dataset graph based on @sec-data table dataset and @sec-discussion providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
 
 # Data {#sec-data}
 
-In this paper, Section 2.1 will be mentioned the data measurement used creating this paper and Section 2.2 will provide the resources to gather the data and information that we used to create the table sets and graphs for the results. Also, there will be three other sections of datasets are used; the first dataset, Section 2.3 containing the dataset of physical attractiveness and employment in 2023 in the United States. Following section which is 2.4 shown educational attractiveness dataset as the second data. The last dataset, Section 2.5, presents the relationship between employment and gender attractiveness. 
+In this paper, @sec-measure will be mentioned the data measurement used creating this paper and @sec-source will provide the resources to gather the data and information that we used to create the table sets and graphs for the results. Also, there will be three other sections of datasets are used; the first dataset, @sec-physical containing the dataset of physical attractiveness and employment in 2023 in the United States. Following section which is @sec-education shown educational attractiveness dataset as the second data. The last dataset, @sec-gender, presents the relationship between employment and gender attractiveness. 
 
-## Data Measurement
+## Data Measurement {#sec-measure}
 
 This paper utilizes based on the R, as the statistical Programming language [@citeR] along with the tidyverse [@tidyverse], palmerpenguins [@palmerpenguins], arrow [@arrow], ggplot2 [@ggplot2], kableExtra [@kableExtra], readr [@readr] and knitr [@knitr] packages for generating the figures, tables and read the data for this papaer.
 
 
-## Data Source
+## Data Source {#sec-source}
 
-This dataset was extracted and collected the information by survey randomly from the United States in 2023 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" by Christopher Marquis, Andras Tilcsik and Ying Zhang in 2023 for gathering the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments [@USA]. 
+This dataset, published from University of Toronto Dataverse [@USA] was extracted and collected the information by survey randomly from the United States in 2023 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" by Christopher Marquis, Andras Tilcsik and Ying Zhang in 2023 for gathering the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments with recruited 2,500 participants had hiring experiences with bachelor's degree or higher educations, with the surveys and in total, 2,020 responses as the final samples, reached up after excluded some conditions including not completed surveys, failed to verified captcha questions and finished the survey in less than a minutes [@USA]. In each datasets, 0 and 1 are indicated as no and yes what these meanings are the data sets, the variables are shown as 0 and 1 for each categories' sections:
+  - 0: not indicated as no for column that belongs to the specific categories 
+  - 1: indicated as yes for column that belongs to the specific categories 
 
-## Physical Attractiveness Dataset
-The physical attractiveness .vs employment dataset, represented below in @tbl-physcial is shown the relationship between each variable's physical attractiveness can correspond with the employments as higher status jobs and lower status jobs. This dataset, published by [
-@USA] as filed R Data updated by 2023, collects information from the workers in the United States with the general survey to figure out the correlation whit the attractiveness and employment and how does each other influences, particularly, beauty of physical that most huge part of attractiveness that people will feel or get the impression easily.
+## Physical Attractiveness Dataset {#sec-physical}
+
+The dataset, referred to as Table 1 (@tbl-physcial), explores the relationship between physical attractiveness and employment outcomes, specifically concerning higher and lower status job positions. Published by the [@USA], this dataset comprises R Data updated through 2023 and draws from a comprehensive survey conducted among workers in the United States. Its primary objective is to elucidate the correlation between physical attractiveness and employment status, shedding light on how each factor influences the other. Notably, the dataset underscores the significance of physical beauty, a predominant aspect of attractiveness that often leaves a lasting impression and holds considerable sway in various social contexts, including the job market.
+
+The physical attractiveness data used in this table is designated as the photons that had included from the resumes of each participants. Highly physical attractiveness is modified as USA beauty standard while less physical attractiveness is used the actual image of university students to compare the attractiveness and perceived of people [@USA]. 
+
+The dataset below this paragraph includes the following variables:
+  - Higher Status Job: Indication as an individual holds a higher status job.
+  - Lower Status Job: Indication as an individual holds a lower status job.
+  - Highly Attractive: Indication as an individuals based on their perceived high level of physical attractiveness.
+  - Less Attractive: Indication as an individuals based on their perceived lower level of physical attractiveness.
 
 ```{r}
 #| label: tbl-physcial 
@@ -73,10 +83,11 @@ cleaned_data |>
   booktabs = TRUE
   )
 ```
+This dataset serves as a foundational resource for examining the intricate connection between physical attractiveness and employment outcomes. By delving into the complexities of modern job markets, it offers valuable insights into how attractiveness influences individuals, particularly within the context of hiring processes and HR team decision-making. For example, participant 1 who had highly attractiveness has higher status job while less attractiveness has lower status job like respondent 10 Table 1 (@tbl-physical). Through rigorous analysis, this dataset illuminates the nuanced dynamics at play, providing valuable guidance for stakeholders navigating the complexities of contemporary employment landscapes.
 
+## Educational Attractiveness Dataset {#sec-education}
 
-## Educational Attractiveness Dataset
-The educational attractiveness dataset, showed below in @tbl-education, presents the relationships of educational attractiveness in which the elite university in this paper case to figure out having better status of jobs/hiring come from attractive as educationally. 
+The educational attractiveness dataset, showed below in Table 2 (@tbl-education), presents the relationships of educational attractiveness in which the elite university in this paper case to figure out having better status of jobs/hiring come from attractive as educationally. 
 
 ```{r}
 #| label: tbl-education
@@ -98,7 +109,8 @@ cleaned_data |>
 
 
 
-## Gender Attractiveness Dataset
+## Gender Attractiveness Dataset {#sec-gender}
+
 
 ```{r}
 #| label: tbl-gender
@@ -117,14 +129,14 @@ slice
 
 ```
 
+#Results {#sec-results}
 
-#Results
-
+physical 
 ```{r}
 #| message: false
 #| echo: false
 #| label: fig-physical
-#| fig-cap: Physical attractives .vs employment (2023)
+#| fig-cap: Physical attractives .vs Employment (2023)
 library(ggplot2)
 
 # Assuming 'cleaned_data' is your dataset
@@ -139,7 +151,7 @@ ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatus
   facet_wrap(~ lessattractive, nrow = 1) +
   scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Correlation between Attractiveness and Employment Status",
+    title = "Physical Attractiveness and Employment Status",
     x = "Attractiveness",
     y = "Count"
   ) +
@@ -147,23 +159,61 @@ ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatus
 
 ```
 
+
+education 
 ```{r}
-sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
+#| message: false
+#| echo: false
+#| label: fig-education
+#| fig-cap: Education attractives .vs Employment (2023)
+library(ggplot2)
+library(dplyr)
 
-convert_to_text <- function(x) {
-  ifelse(x == 0, "less attractive", "attractive")
-}
+# Define factor levels for higheruni, middleuni, and loweruni
+sampled_data <- sampled_data %>%
+  mutate(higheruni = recode(higheruni, "0" = "Higher University", "1" = "Middle University", "2" = "Lower University")) 
 
-data <- data %>%
-  mutate(across(where(~all(. %in% c(0, 1))), convert_to_text))
-
-
-print(data)
+# Plot the bar graph
+ggplot(sampled_data, aes(x = factor(higheruni), fill = factor(lowerstatusjob), y = 1)) +
+  geom_bar(position = "stack", stat = "identity", color = "black") +
+  facet_wrap(~ loweruni, nrow = 1) +
+  scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
+  labs(
+    title = "Educational Attractiveness and Employment Status",
+    y = "Count"
+  ) +
+  scale_x_discrete(labels = c("Higher University", "Middle University", "Lower University")) +  # Manually setting x-axis labels
+  theme(axis.title.x=element_blank(),axis.text.x=element_text(size=12),axis.ticks.x=element_blank()) 
 ```
 
 
 
-# Discussion
+gender 
+```{r}
+#| message: false
+#| echo: false
+#| label: fig-gender
+#| fig-cap: Gender attractives .vs Employment (2023)
+
+# Select 100 random observations from the dataset
+sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
+
+# Plot the bar graph
+ggplot(sampled_data, aes(x = factor(male), fill = factor(lowerstatusjob), y = 1)) +
+  geom_bar(position = "stack", stat = "identity", color = "black") +
+  facet_wrap(~ female, nrow = 1) +
+  scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
+  labs(
+    title = "Physical Attractiveness and Employment Status",
+    x = "Attractiveness",
+    y = "Count"
+  ) +
+  scale_x_discrete(labels = c("Male", "Female")) +  # Manually setting x-axis labels
+  theme(axis.title.x = element_blank(), axis.text.x = element_text(size = 12), axis.ticks.x = element_blank())
+
+```
+
+# Discussion {#sec-discussion}
 
 ## First discussion point {#sec-first-point}
 
