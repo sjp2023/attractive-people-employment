@@ -25,8 +25,7 @@ library(kableExtra)
 library(knitr)
 library(dplyr)
 
-cleaned_data <- read_parquet(here::here("analysis_data.parquet"))
-```
+cleaned_data <- read_parquet(here::here("data/analysis_data/analysis_data.parquet"))
 
 
 
