@@ -1,11 +1,11 @@
 ---
 title: "Attractive people, Attractive jobs "
-subtitle: "The influence of attractiveness on Employement in the United States (2023)"
+subtitle: "The influence of attractiveness on Employment in the United States (2023)"
 author: Sky Suh
 thanks: "Code and data are available at: https://github.com/sjp2023/beauty-standard.git"
 date: today
 date-format: long
-abstract: "This paper explores  the intricate dynamics between attractiveness and employment, examining how various factors such as individual characteristics, skills, and demographics intersect with physical appearance to influence the hiring process and subsequent career success. Leveraging data sourced from a public dataverse, our study reveals compelling insights into the role of attractiveness in shaping employment outcomes. Our findings suggest that attractiveness can significantly impact both the hiring process and long-term career trajectories, underscoring its relevance in contemporary employment landscapes. Furthermore, this paper underscores the importance of considering a broader spectrum of factors beyond attractiveness alone when predicting employment outcomes, shedding light on the pervasive biases that may arise from overly simplistic assessments."
+abstract: "This paper delves into the complex relationship between physical attractiveness and employment, exploring how various factors such as individual characteristics, skills, and demographics intersect with physical appearance to influence the hiring process and subsequent career success.  Our study makes use of data sourced from the University of Toronto dataverse, and reveals interesting insights into the role of attractiveness in shaping employment outcomes. Our findings suggest that physical attractiveness can have a significant impact on both the hiring process and long-term career trajectories, highlighting its relevance in employment and hiring sessions. Additionally, this paper emphasizes the importance of considering a broader range of factors beyond attractiveness alone when predicting employment outcomes, to shed light on the pervasive biases that may arise from overly simplistic assessments."
 format: pdf
 toc: TRUE
 number-sections: true
@@ -25,7 +25,7 @@ library(kableExtra)
 library(knitr)
 library(dplyr)
 
-cleaned_data <- read_parquet(here::here("data/analysis_data/analysis_data.parquet"))
+cleaned_data <- read_parquet(here::here("analysis_data.parquet"))
 ```
 
 
@@ -46,8 +46,7 @@ In this paper, @sec-measure will mention the data measurement used in creating t
 
 ## Data Measurement {#sec-measure}
 
-This paper utilizes based on R, as the statistical Programming language [@citeR] along with the tidyverse [@tidyverse], palmerpenguins [@palmerpenguins], arrow [@arrow], ggplot2 [@ggplot2], kableExtra [@kableExtra], readr [@readr] and knitr [@knitr] packages for generating the figures, tables and read the data for this papaer.
-
+This paper utilizes based on R, as the statistical Programming language [@citeR] along with the tidyverse [@tidyverse], palmerpenguins [@palmerpenguins], arrow [@arrow], ggplot2 [@ggplot2], kableExtra [@kableExtra], tbble [@tibble], readr [@readr], knitr [@knitr] and dplyr [@dplyr] packages for generating the figures, tables and read the data for this papaer.
 
 ## Data Source {#sec-source}
 
@@ -57,7 +56,7 @@ This dataset, published by University of Toronto Dataverse [@USA] was extracted 
 
 ## Physical Attractiveness Dataset {#sec-physical}
 
-The dataset, referred to as Table 1 (@tbl-physcial), explores the relationship between physical attractiveness and employment outcomes, specifically concerning higher and lower-status job positions. Published by the [@USA], this dataset comprises R Data updated through 2023 and draws from a comprehensive survey conducted among undergraduate students who have experienced for hiring process in the United States. Its primary objective is to explain the correlation between physical attractiveness and employment status, highlighting on how each factor influences the other. Notably, the dataset underscores the significance of physical beauty, a predominant aspect of attractiveness that often leaves a lasting impression and holds considerable sway in various social contexts, including the job market.
+The dataset, referred to as Table 1 (@tbl-physical), explores the relationship between physical attractiveness and employment outcomes, specifically concerning higher and lower-status job positions. Published by the [@USA], this dataset comprises R Data updated through 2023 and draws from a comprehensive survey conducted among undergraduate students who have experienced for hiring process in the United States. Its primary objective is to explain the correlation between physical attractiveness and employment status, highlighting on how each factor influences the other. Notably, the dataset underscores the significance of physical beauty, a predominant aspect of attractiveness that often leaves a lasting impression and holds considerable sway in various social contexts, including the job market.
 
 The physical attractiveness data used in this table is designated as the photos that were included in the resumes of each participant. Highly physical attractiveness is modified as USA beauty standard while less physical attractiveness is used the actual image of university students to compare the attractiveness and perceived of people [@USA]. 
 
@@ -68,7 +67,7 @@ The dataset below this paragraph includes the following variables:
   - Less Attractive: Indication as an individual based on their perceived lower level of physical attractiveness.
 
 ```{r}
-#| label: tbl-physcial 
+#| label: tbl-physical 
 #| tbl-cap: The dataset containing physical attractiveness and the status of employment.
 #| echo: false
 #| warning: false
@@ -115,7 +114,7 @@ cleaned_data |>
   )
 
 ```
-This dataset is a valuable resource for analyzing the relationship between educational attractiveness and employment outcomes during the hiring process. Examining modern job markets provides insights into how education affects hiring decisions and job prospects. For instance, most participants who attend higher universities have higher-status jobs compared with middle and lower-university participants (@tbl-educational). Which, individuals who attended elite universities may have a higher chance of landing higher-status job positions than those who attended non-elite institutions. Through this dataset analysis, this table highlights and provides valuable guidance for stakeholders who have a difficult period or feel the unfairness of the hiring process these days with education.
+This dataset is a valuable resource for analyzing the relationship between educational attractiveness and employment outcomes during the hiring process. Examining modern job markets provides insights into how education affects hiring decisions and job prospects. For instance, most participants who attend higher universities have higher-status jobs compared with middle and lower-university participants (@tbl-education). Which, individuals who attended elite universities may have a higher chance of landing higher-status job positions than those who attended non-elite institutions. Through this dataset analysis, this table highlights and provides valuable guidance for stakeholders who have a difficult period or feel the unfairness of the hiring process these days with education.
 
 ## Gender Attractiveness Dataset {#sec-gender}
 
@@ -144,11 +143,11 @@ cleaned_data |>
 ```
 This dataset is crucial for analyzing the connection between gender representation and job outcomes and supports conducting the graph in @sec-results to view the differences easily with the comparison of each component with insighting into how gender attractiveness affects recruitment decisions and job seekers' perceptions in the modern job market. As an example, in this dataset, the ratio of males who have higher-status jobs is higher than the female contribution in prominent jobs but females have more ratio in lower-status jobs.
 
-#Results {#sec-results}
+# Results {#sec-results}
 
 ## Hire because of physical Attractiveness
 
-To determine the relationship between physical attractiveness and employment status per individual, a merged and summarized data set was created with variables for high attractiveness, less attractiveness and employment status (higher status job, lower status job) as shown in Table 1 (see @tbl-physical). Figure 1 @fig-physical, the bar graph, shows the distribution of employment status across different levels of physical attractiveness as the individual examined using a sample of 100 observations randomly from the dataset.  Each bar represents the count of individuals categorized based on their perceived level of attractiveness, with distinctions made between those holding higher-status jobs and those in lower-status positions. The x-axis denotes attractiveness levels, while the y-axis represents the count of individuals. 
+To determine the relationship between physical attractiveness and employment status per individual, a merged and summarized data set was created with variables for high attractiveness, less attractiveness and employment status (higher status job, lower status job) as shown in Table 1 (see @tbl-physical). @fig-physical, the bar graph, shows the distribution of employment status across different levels of physical attractiveness as the individual examined using a sample of 100 observations randomly from the dataset.  Each bar represents the count of individuals categorized based on their perceived level of attractiveness, with distinctions made between those holding higher-status jobs and those in lower-status positions. The x-axis denotes attractiveness levels, while the y-axis represents the count of individuals. 
 ```{r}
 #| message: false
 #| echo: false
@@ -172,7 +171,7 @@ ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatus
   theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank()) 
 
 ```
-As presented in Figure 1 @fig-physical, what could be noted was that 21 counted of highly attractive participants have lower status jobs in the sampled data of 100 while 27 less attractive stakeholders are counted as having lower positions. For higher-status jobs, 27 higher attractive people have higher ranking positions, in the meantime, 25 less attractive people have lower positions. Upon visual, it is evident that individuals perceived to be very attractive tend to have a higher proportion of jobs in higher positions than those who are perceived to be less attractive. On the contrary, those who are considered unattractive are more widely spread in lower-ranking occupations. There might be slight differences but this is only 100 observations, in cleaned data, it has 2020 observations; what it means the differences between high and less attractive participants will be huge. 
+As presented in @fig-physical, what could be noted was that 21 counted of highly attractive participants have lower status jobs in the sampled data of 100 while 27 less attractive stakeholders are counted as having lower positions. For higher-status jobs, 27 higher attractive people have higher ranking positions, in the meantime, 25 less attractive people have lower positions. Upon visual, it is evident that individuals perceived to be very attractive tend to have a higher proportion of jobs in higher positions than those who are perceived to be less attractive. On the contrary, those who are considered unattractive are more widely spread in lower-ranking occupations. There might be slight differences but this is only 100 observations, in cleaned data, it has 2020 observations; what it means the differences between high and less attractive participants will be huge. 
 
 ## Better education, better jobs
 
@@ -200,18 +199,18 @@ ggplot(sampled_data, aes(x = factor(higheruni), fill = factor(lowerstatusjob), y
   scale_x_discrete(labels = c("Higher University", "Middle University", "Lower University")) +  # Manually setting x-axis labels
   theme(axis.title.x=element_blank(),axis.text.x=element_text(size=12),axis.ticks.x=element_blank()) 
 ```
-To analyze the relationship between educational background (while attending university) and employment status, we constructed an analyzed summary dataset and marginalized variables of education attractiveness depending on the level of the university (high, middle and low), and employment status. This dataset is detailed in Table 2 (see @tbl-education). Figure 2 @fig-education, same as figure 1 @fig-physical, the bar graph, presents the implications of a better university providing a better job status in the sampled data of 100 observations that were randomly distrusted. 
+To analyze the relationship between educational background (while attending university) and employment status, we constructed an analyzed summary dataset and marginalized variables of education attractiveness depending on the level of the university (high, middle and low), and employment status. This dataset is detailed in Table 2 (see @tbl-education). @fig-education, same as @fig-physical, the bar graph, presents the implications of a better university providing a better job status in the sampled data of 100 observations that were randomly distrusted. 
 
-For Figure 2 @fig-education, as mentioned above in this paragraph, a sample of 100 observations was randomly selected from the dataset to represent the broader undergraduate/graduated students in USA. Each bar in the graph represents the count of individuals categorized based on their perceived level of educational attractiveness and the status of their employment (higher status job or lower status job). 
+For @fig-education, as mentioned above in this paragraph, a sample of 100 observations was randomly selected from the dataset to represent the broader undergraduate/graduated students in USA. Each bar in the graph represents the count of individuals categorized based on their perceived level of educational attractiveness and the status of their employment (higher status job or lower status job). 
 
 What @fig-education has shown above that bar graph, every 18 participants in both three universities have a higher status job but the students in the higher university have fewer counts for lower status jobs - 15, 17 participants are counted as lower ranking positions in the middle university while total 25 students attending in the lower university have very low status for their jobs. This analysis provides insight into how attending an elite university affects an individual's chances of securing a higher-ranking job and highlights the interaction between educational background and career outcomes. 
 
 ## Gender perception, employment perception
 
 
-To explore the relationship between gender attractiveness and employment status, a comprehensive dataset was synthesized with the variables of gender attractiveness - male and female, and job status. This dataset is outlined in Table 3 (see @tbl-gender). Figure 3, referred to as Figure @fig-gender, visually illustrates this association through a bar graph. Same as figure 1@fig-physical and figure 2@fig-education, a representative sample of this dataset is 100 observations drawn randomly from the experimental designed surveys in the US. Each bar within the graph signifies the count of individuals based on their perceived gender attractiveness and their respective employment status (higher status job or lower status job). 
+To explore the relationship between gender attractiveness and employment status, a comprehensive dataset was synthesized with the variables of gender attractiveness - male and female, and job status. This dataset is outlined in Table 3 (see @tbl-gender). Figure 3, referred to as @fig-gender, visually illustrates this association through a bar graph. Same as @fig-physical and @fig-education, a representative sample of this dataset is 100 observations drawn randomly from the experimental designed surveys in the US. Each bar within the graph signifies the count of individuals based on their perceived gender attractiveness and their respective employment status (higher status job or lower status job). 
 
-According to Figure 3, @fig-gender found that among 100 participants, 25 females held lower-status jobs compared to 24 males, while 25 higher-status jobs were held by female participants and 26 by male stakeholders. Visually, it was evident that males were perceived as more attractive and had a higher likelihood of securing better jobs than females for various reasons. Although the gap between gender and employment status was small in this sample, it is important to note that the dataset contained 2020 observations, indicating that the differences may be significant depending on the gender of the participants.
+According to @fig-gender, found that among 100 participants, 25 females held lower-status jobs compared to 24 males, while 25 higher-status jobs were held by female participants and 26 by male stakeholders. Visually, it was evident that males were perceived as more attractive and had a higher likelihood of securing better jobs than females for various reasons. Although the gap between gender and employment status was small in this sample, it is important to note that the dataset contained 2020 observations, indicating that the differences may be significant depending on the gender of the participants. 
 
 ```{r}
 #| message: false
@@ -239,30 +238,31 @@ ggplot(sampled_data, aes(x = factor(male), fill = factor(lowerstatusjob), y = 1)
 
 # Discussion {#sec-discussion}
 
-As evidenced by the results, there are a few points that should be pointed out with three major objections aimed at this paper. 
+As evidenced by the results, there are a few points that should be pointed out with three major objections aimed at this paper. First point @sec-attract will mention about the result of physical attractiveness affect to the employment status; next section, @sec-university talks the educational background can influence to have a better job. Lastly, gender attractiveness improve and advance the career opportunity in @sec-sex.
 
 ## Highly attractive influences to get the higher status jobs during the hiring process {#sec-attract}
 
-
+Physical attractiveness is melted into the part of people’s life and judged by society. When it comes to landing a higher-status job, several highly attractive influences can make people stand out from other candidates, particularly, during the hiring process. Appearance plays a crucial role in forming initial impressions during interactions which will be the interview session for the employment with contributing the perceptions of the professionalism. According to Karen Dion, Research suggests that individuals perceived as physically attractive may benefit from implicit biases, as they are often perceived as more competent, trustworthy, and capable [@Dion]. In which, provides the advantages to the candidates for HR managers where positive initial impressions can shape the better qualification and sustainability for the roles. It leads to attractive people having a higher chance to get higher-status jobs or enhance their careers and investing in physical appearance to raise the attractiveness will help to advance career prospects. 
 
 ## Elite and well-known university improves the chance to have a better job {#sec-university}
 
+Another point to discuss in this paper is high-ranking and well-known universities have higher chances to get a better job. These days, the reputation and prestige of a university are important and it can impact on the employment status or hiring process. These universities are offering graduates a clear advantage in the job market. Employers view candidates who graduate from prestigious universities favourably, thinking they have a higher level of education, skills, and qualifications which recruiters and hiring managers are inclined to prioritize candidates who hold degrees from elite institutions due to the perceived quality of education and training they receive. Researchers investigate that the increasing admission and graduation rates in higher-ranking universities, allow employers to recruit better and more talented individuals [@Nogales]. Not only the fame but also the institutions have access to extensive networks and opportunities for career advancement, As a result, employers are able to seek out future employees from the graduated students from well-known universities actively. On the other hand, middle or lower universities have less chance to have higher-status jobs due to the lack of networking and fame which are less attractive than high-rank schools. 
+
 ## Males advance the improved career opportunity {#sec-sex}
 
-## Weaknesses and next steps
+The last discussion to point out is gender, a huge impact on employment practices and career opportunities, and it is one of the most enduring, controversial, and widely studied topics in various disciplines over a century. The importance of gender dynamics in the employment context remains a central point of social discussion and cannot be overstated. The impact of gender on employment processes or career trajectories is multifaceted and complex due to the stereotypes from history which maintain gender discrimination and prejudice in employment practices, and certain industries and positions are disproportionately dominated by males specifically. What Kubiak wrote in the paper was gender biases' impact on hiring decisions remained an issue [@Kubiak]. Even Figure 3 (see @fig-gender) provides the different gaps between females and males for job status and if it covers all 2020 respondents, the gaps will be hugely different. 
 
-Weaknesses and next steps should also be included.
+## Weaknesses and Next steps
+
+### Weakness 
+
+The limitation of using data from Dataverse at the University of Toronto is the format of the variables which are predominantly answered as binary values (0 or 1) rather than categorical responses (yes or no). This formatting issue poses challenges when converting the data into tables and graphs in this paper to present as data and results. For instance, figures @fig-education and @fig-gender, the x-axis captions cannot be effectively managed but overlapped, and the labels displaying 0 and 1 above the graphs cannot be removed. This limitation restricts the clarity and comprehensibility of the visual representations of the data visualized as the graphs but hindering the ability to convey meaningful insights to readers. Moreover, the prevalence of binary variables in the dataset causes the risk of error data interpretation. The presence of 0 and 1 values may lead the system to misinterpret certain variables as missing or incorrect data, potentially resulting in inaccuracies in the generated tables and graphs. Such inaccuracies can compromise the sample data from the dataset.
+
+### Next steps
+
+A possible next step could be to explore how different characteristics/interpersonal skills that each individual has with different academic backgrounds and attractiveness can influence employment status with an individual’s gender and the relationship between characteristics of individual and job status regardless of physical, gender and educational background attractiveness but what HR teams or supervisors think about each person itself without any perceptions components. Additionally, we could also create a model section to make a linear regression model to present the differences. Regarding the binary responses in the dataset, instead of 0 and 1, simple but straightforward answers (Yes and No) could be done to be beneficial and improve the overall analysis, the quality of graphs and the paper. Furthermore, the visualization of a separated graph model to easy to compare each component would be helpful to advance the quality of this paper. 
 
 \newpage
-
-\appendix
-
-# Appendix {-}
-
-
-
-\newpage
-
 
 # References
 
