@@ -5,7 +5,7 @@ author: Sky Suh
 thanks: "Code and data are available at: https://github.com/sjp2023/beauty-standard.git"
 date: today
 date-format: long
-abstract: "This paper delves into the complex relationship between physical attractiveness and employment, exploring how various factors such as individual characteristics, skills, and demographics intersect with physical appearance to influence the hiring process and subsequent career success.  Our study makes use of data sourced from the University of Toronto dataverse, and reveals interesting insights into the role of attractiveness in shaping employment outcomes. Our findings suggest that physical attractiveness can have a significant impact on both the hiring process and long-term career trajectories, highlighting its relevance in employment and hiring sessions. Additionally, this paper emphasizes the importance of considering a broader range of factors beyond attractiveness alone when predicting employment outcomes, to shed light on the pervasive biases that may arise from overly simplistic assessments."
+abstract: "This paper delves into the relationship between attractiveness and employment, exploring how various factors such as individual characteristics, skills, and demographics intersect with physical appearance, educational background and gender to influence the hiring process and subsequent career success. Our study makes use of data sourced from the University of Toronto dataverse, and reveals interesting insights into the role of attractiveness in shaping employment outcomes and the status of jobs. Our findings suggest that most socio-demographic attractiveness including appearance, education and sex can have a significant impact on both the hiring process and long-term career, highlighting its relevance in employment and hiring sessions. Additionally, this paper emphasizes the importance of considering a broader range of factors beyond attractiveness alone when predicting employment outcomes as physical, educational background and gender with the correlation fo those variables."
 format: pdf
 toc: TRUE
 number-sections: true
@@ -25,7 +25,8 @@ library(kableExtra)
 library(knitr)
 library(dplyr)
 
-cleaned_data <- read_parquet(here::here("data/analysis_data/analysis_data.parquet"))
+cleaned_data <- read_parquet(here::here("analysis_data.parquet"))
+```
 
 
 
@@ -60,10 +61,11 @@ The dataset, referred to as Table 1 (@tbl-physical), explores the relationship b
 The physical attractiveness data used in this table is designated as the photos that were included in the resumes of each participant. Highly physical attractiveness is modified as USA beauty standard while less physical attractiveness is used the actual image of university students to compare the attractiveness and perceived of people [@USA]. 
 
 The dataset below this paragraph includes the following variables:
-  - Higher Status Job: Indication that an individual holds a higher status job.
-  - Lower Status Job: Indication that an individual holds a lower status job.
-  - Highly Attractive: Indication as an individual based on their perceived high level of physical attractiveness.
-  - Less Attractive: Indication as an individual based on their perceived lower level of physical attractiveness.
+  
+  * Higher Status Job: Indication that an individual holds a higher status job.
+  * Lower Status Job: Indication that an individual holds a lower status job.
+  * Highly Attractive: Indication as an individual based on their perceived high level of physical attractiveness.
+  * Less Attractive: Indication as an individual based on their perceived lower level of physical attractiveness.
 
 ```{r}
 #| label: tbl-physical 
@@ -90,11 +92,12 @@ Another dataset, indicated in Table 2 (@tbl-education), delves into the concept 
 It mentioned above, the educational attractiveness data used in this table is sourced from the educational background of the resumes of each participant. To present and compare the educational attractiveness and perception of people for the hiring process, the researchers distinguished IVY League or well-known universities as higher universities, middle universities as some people know and lower universities are most people do not know [@USA].
 
 The educational dataset below this paragraph includes the following variables:
-  - Higher University: Indication as an individual attended very well-known or top 20 universities.
-  - Middle University: Indication as an individual attended some or few-known universities.
-  - Lower University: Indication as an individual attended not-known universities. 
-  - Higher Status Job: Indication that an individual holds a higher status job.
-  - Lower Status Job: Indication that an individual holds a lower status job.
+
+  * Higher University: Indication as an individual attended very well-known or top 20 universities.
+  * Middle University: Indication as an individual attended some or few-known universities.
+  * Lower University: Indication as an individual attended not-known universities. 
+  * Higher Status Job: Indication that an individual holds a higher status job.
+  * Lower Status Job: Indication that an individual holds a lower status job.
 
 ```{r}
 #| label: tbl-education
@@ -120,10 +123,11 @@ This dataset is a valuable resource for analyzing the relationship between educa
 In the last section of the data, Table 3, attributed to @tbl-gender, investigates the complex inter-connection between gender attractiveness and the status of jobs, mainly in relation to higher status and lower status of jobs depending on the individual's gender since gender is sensitive but viral argument topics for the various fields, mostly on the jobs or hiring process. Interestingly, this argument is continuous over 100 years but still, this is the main issue for having a job or hiring a person. This gender dataset was extracted from the survey conducted randomly in 2023 in the various universities' in USA [@USA] and will be derived from diverse groups of university students who have gone through various recruitment processes. Its main goal is to reveal the relationship between attractiveness and seniority in the job and to provide valuable insight into how gender expression affects people's perceptions in the job market.
 
 The gender attractiveness dataset provides insights into the following variables:
-  - Male: Gender presentation of individuals categorized as male.
-  - Female: Gender presentation of individuals categorized as female
-  - Higher Status Job: Indication that an individual holds a higher status job.
-  - Lower Status Job: Indication that an individual holds a lower status job.
+
+  * Male: Gender presentation of individuals categorized as male.
+  * Female: Gender presentation of individuals categorized as female
+  * Higher Status Job: Indication that an individual holds a higher status job.
+  * Lower Status Job: Indication that an individual holds a lower status job.
 
 ```{r}
 #| label: tbl-gender
@@ -163,7 +167,6 @@ ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatus
   facet_wrap(~ lessattractive, nrow = 1) +
   scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Physical Attractiveness and Employment Status",
     x = "Attractiveness",
     y = "Count"
   ) +
@@ -192,7 +195,6 @@ ggplot(sampled_data, aes(x = factor(higheruni), fill = factor(lowerstatusjob), y
   facet_wrap(~ loweruni, nrow = 1) +
   scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Educational Attractiveness and Employment Status",
     y = "Count"
   ) +
   scale_x_discrete(labels = c("Higher University", "Middle University", "Lower University")) +  # Manually setting x-axis labels
@@ -226,7 +228,6 @@ ggplot(sampled_data, aes(x = factor(male), fill = factor(lowerstatusjob), y = 1)
   facet_wrap(~ female, nrow = 1) +
   scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Gender Attractiveness and Employment Status",
     x = "Attractiveness",
     y = "Count"
   ) +
