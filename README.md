@@ -22,5 +22,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-No LLMs were used.
-
+Aspects of R code for the graph in this paper, ChatGPR-3.5 had used to figure out the bar graph in the result section. The chat history is available in inputs/llms.
