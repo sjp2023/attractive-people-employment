@@ -91,7 +91,7 @@ Another dataset, indicated in Table 2 (@tbl-education), delves into the concept 
 
 It mentioned above, the educational attractiveness data used in this table is sourced from the educational background of the resumes of each participant. To present and compare the educational attractiveness and perception of people for the hiring process, the researchers distinguished IVY League or well-known universities as higher universities, middle universities as some people know and lower universities are most people do not know [@USA].
 
-The dataset below this paragraph includes the following variables:
+The educational dataset below this paragraph includes the following variables:
   - Higher University: Indication as an individual attended very well-known or top 20 universities.
   - Middle University: Indication as an individual attended some or few-known universities.
   - Lower University: Indication as an individual attended not-known universities. 
@@ -119,6 +119,13 @@ This dataset is a valuable resource for analyzing the relationship between educa
 
 ## Gender Attractiveness Dataset {#sec-gender}
 
+In the last section of the data, Table 3, attributed to @tbl-gender, investigates the complex inter-connection between gender attractiveness and the status of jobs, mainly in relation to higher status and lower status of jobs depending on the individual's gender since gender is sensitive but viral argument topics for the various fields, mostly on the jobs or hiring process. Interestingly, this argument is continuous over 100 years but still, this is the main issue for having a job or hiring a person. This gender dataset was extracted from the survey conducted randomly in 2023 in the various universities' in USA [@USA] and will be derived from diverse groups of university students who have gone through various recruitment processes. Its main goal is to reveal the relationship between attractiveness and seniority in the job and to provide valuable insight into how gender expression affects people's perceptions in the job market.
+
+The gender attractiveness dataset provides insights into the following variables:
+  - Male: Gender presentation of individuals categorized as male.
+  - Female: Gender presentation of individuals categorized as female
+  - Higher Status Job: Indication that an individual holds a higher status job.
+  - Lower Status Job: Indication that an individual holds a lower status job.
 
 ```{r}
 #| label: tbl-gender
@@ -128,23 +135,25 @@ This dataset is a valuable resource for analyzing the relationship between educa
 
 cleaned_data |>
   slice_sample(n = 10) |>
-  select(male, female, highlyattractive, lessattractive) |>
+  select(male, female, higherstatusjob, lowerstatusjob) |>
   kable(
-    col.names = c("male", "female", "highlyattractive", "lessattractive"),
+    col.names = c("male", "female", "higherstatusjob", "lowerstatusjob"),
   booktabs = TRUE
   )
-slice
 
 ```
+This dataset is crucial for analyzing the connection between gender representation and job outcomes and supports conducting the graph in @sec-results to view the differences easily with the comparison of each component with insighting into how gender attractiveness affects recruitment decisions and job seekers' perceptions in the modern job market. As an example, in this dataset, the ratio of males who have higher-status jobs is higher than the female contribution in prominent jobs but females have more ratio in lower-status jobs.
 
 #Results {#sec-results}
 
-physical 
+## Hire because of physical Attractiveness
+
+To determine the relationship between physical attractiveness and employment status per individual, a merged and summarized data set was created with variables for high attractiveness, less attractiveness and employment status (higher status job, lower status job) as shown in Table 1 (see @tbl-physical). Figure 1 @fig-physical, the bar graph, shows the distribution of employment status across different levels of physical attractiveness as the individual examined using a sample of 100 observations randomly from the dataset.  Each bar represents the count of individuals categorized based on their perceived level of attractiveness, with distinctions made between those holding higher-status jobs and those in lower-status positions. The x-axis denotes attractiveness levels, while the y-axis represents the count of individuals. 
 ```{r}
 #| message: false
 #| echo: false
 #| label: fig-physical
-#| fig-cap: Physical attractives .vs Employment (2023)
+#| fig-cap: Physical attractiveness .vs Employment (2023)
 library(ggplot2)
 
 # Select 100 random observations from the dataset
@@ -163,14 +172,15 @@ ggplot(sampled_data, aes(x = factor(highlyattractive), fill = factor(lowerstatus
   theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank()) 
 
 ```
+As presented in Figure 1 @fig-physical, what could be noted was that 21 counted of highly attractive participants have lower status jobs in the sampled data of 100 while 27 less attractive stakeholders are counted as having lower positions. For higher-status jobs, 27 higher attractive people have higher ranking positions, in the meantime, 25 less attractive people have lower positions. Upon visual, it is evident that individuals perceived to be very attractive tend to have a higher proportion of jobs in higher positions than those who are perceived to be less attractive. On the contrary, those who are considered unattractive are more widely spread in lower-ranking occupations. There might be slight differences but this is only 100 observations, in cleaned data, it has 2020 observations; what it means the differences between high and less attractive participants will be huge. 
 
+## Better education, better jobs
 
-education 
 ```{r}
 #| message: false
 #| echo: false
 #| label: fig-education
-#| fig-cap: Education attractives .vs Employment (2023)
+#| fig-cap: Education attractiveness .vs Employment (2023)
 library(ggplot2)
 library(dplyr)
 
@@ -190,15 +200,24 @@ ggplot(sampled_data, aes(x = factor(higheruni), fill = factor(lowerstatusjob), y
   scale_x_discrete(labels = c("Higher University", "Middle University", "Lower University")) +  # Manually setting x-axis labels
   theme(axis.title.x=element_blank(),axis.text.x=element_text(size=12),axis.ticks.x=element_blank()) 
 ```
+To analyze the relationship between educational background (while attending university) and employment status, we constructed an analyzed summary dataset and marginalized variables of education attractiveness depending on the level of the university (high, middle and low), and employment status. This dataset is detailed in Table 2 (see @tbl-education). Figure 2 @fig-education, same as figure 1 @fig-physical, the bar graph, presents the implications of a better university providing a better job status in the sampled data of 100 observations that were randomly distrusted. 
+
+For Figure 2 @fig-education, as mentioned above in this paragraph, a sample of 100 observations was randomly selected from the dataset to represent the broader undergraduate/graduated students in USA. Each bar in the graph represents the count of individuals categorized based on their perceived level of educational attractiveness and the status of their employment (higher status job or lower status job). 
+
+What @fig-education has shown above that bar graph, every 18 participants in both three universities have a higher status job but the students in the higher university have fewer counts for lower status jobs - 15, 17 participants are counted as lower ranking positions in the middle university while total 25 students attending in the lower university have very low status for their jobs. This analysis provides insight into how attending an elite university affects an individual's chances of securing a higher-ranking job and highlights the interaction between educational background and career outcomes. 
+
+## Gender perception, employment perception
 
 
+To explore the relationship between gender attractiveness and employment status, a comprehensive dataset was synthesized with the variables of gender attractiveness - male and female, and job status. This dataset is outlined in Table 3 (see @tbl-gender). Figure 3, referred to as Figure @fig-gender, visually illustrates this association through a bar graph. Same as figure 1@fig-physical and figure 2@fig-education, a representative sample of this dataset is 100 observations drawn randomly from the experimental designed surveys in the US. Each bar within the graph signifies the count of individuals based on their perceived gender attractiveness and their respective employment status (higher status job or lower status job). 
 
-gender 
+According to Figure 3, @fig-gender found that among 100 participants, 25 females held lower-status jobs compared to 24 males, while 25 higher-status jobs were held by female participants and 26 by male stakeholders. Visually, it was evident that males were perceived as more attractive and had a higher likelihood of securing better jobs than females for various reasons. Although the gap between gender and employment status was small in this sample, it is important to note that the dataset contained 2020 observations, indicating that the differences may be significant depending on the gender of the participants.
+
 ```{r}
 #| message: false
 #| echo: false
 #| label: fig-gender
-#| fig-cap: Gender attractives .vs Employment (2023)
+#| fig-cap: Gender attractiveness .vs Employment (2023)
 
 # Select 100 random observations from the dataset
 sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
@@ -209,7 +228,7 @@ ggplot(sampled_data, aes(x = factor(male), fill = factor(lowerstatusjob), y = 1)
   facet_wrap(~ female, nrow = 1) +
   scale_fill_manual(values = c("blue", "red"), name = "Employment Status", labels = c("Higher Status Job", "Lower Status Job")) +
   labs(
-    title = "Physical Attractiveness and Employment Status",
+    title = "Gender Attractiveness and Employment Status",
     x = "Attractiveness",
     y = "Count"
   ) +
@@ -220,13 +239,15 @@ ggplot(sampled_data, aes(x = factor(male), fill = factor(lowerstatusjob), y = 1)
 
 # Discussion {#sec-discussion}
 
-## First discussion point {#sec-first-point}
+As evidenced by the results, there are a few points that should be pointed out with three major objections aimed at this paper. 
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+## Highly attractive influences to get the higher status jobs during the hiring process {#sec-attract}
 
-## Second discussion point
 
-## Third discussion point
+
+## Elite and well-known university improves the chance to have a better job {#sec-university}
+
+## Males advance the improved career opportunity {#sec-sex}
 
 ## Weaknesses and next steps
 
