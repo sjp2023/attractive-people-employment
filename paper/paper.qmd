@@ -32,40 +32,40 @@ cleaned_data <- read_parquet(here::here("data/analysis_data/analysis_data.parque
 
 # Introduction
 
-Beauty, as attractiveness, becomes the standard of everything in modern society as evolving into a global conversation from body shapes, and flawless skin to ideal face which influences towards individual and social-cultural perspectives. These standards are being as the measurements of ourselves and others. For a long time, attractiveness has provided important aspects of human interaction and shapes the judgement about people as impacting on first impression when meeting people for the first time and may have the stereotype of what is the person like. Furthermore, the attractiveness of people influences individuals' education, and gender not only viewing physical shapes. As a result, these types of attractiveness are creating bias, particularly in employment. The attractive workers earn 10 to 15 percent more than average or low-looking groups [@Chand]. Even in the diverse environmental workforce of the United States, the interplay between personal attractiveness and professional success is deeply connected. The way of attractiveness could shape and lead to the outcome of employment has been created by society and raised interest among scholars, researchers, and the general regarding the impact of those connections [@Ruffle].
+Beauty, as attractiveness, becomes the standard of everything in modern society as evolving into a global conversation from body shapes, and flawless skin to ideal face which influences towards individual and social-cultural perspectives. These standards are being as the measurements of ourselves and others. For a long time, attractiveness has provided important aspects of human interaction. It shapes the judgement about people as impacting on first impression when meeting people for the first time and may have the stereotype of what is the person like. Furthermore, the attractiveness of people influences individuals' education, and gender not only viewing physical shapes. As a result, these types of attractiveness are creating bias, particularly in employment. The attractive workers earn 10 to 15 percent more than average or low-looking groups [@Chand]. Even in the diverse environmental workforce of the United States, the interplay between personal attractiveness and professional success is deeply connected. The way attractiveness could shape and lead to the outcome of employment has been created by society and raised interest among scholars, researchers, and the general regarding the impact of those connections [@Ruffle].
 
-This research paper investigates the importance of the relationship between attractive people and employment for both the hiring process and success in the United States where the land of diversity and opportunity. I utilized a data set from 2023 U.S. data from "The University of Toronto Dataverse of Borealis" to conduct the data and analyze the connection between the attractiveness of people and employment regarding gender, physical and education. The estimand explored from this paper is, how does people's attractiveness impacts employment with measured for 1 and 0 of classification 1 for being yes, 0 being no with physical, educational and gender attractiveness with the employment correlations. 
+This research paper investigates the importance of the relationship between attractive people and employment for both the hiring process and success in the United States where the land of diversity and opportunity. I utilized a data set from 2023 U.S. data from "The University of Toronto Dataverse of Borealis" to conduct the data and analyze the connection between the attractiveness of people and employment regarding gender, physical and education. The estimand explored from this paper is, how people's attractiveness impacts employment with measured for 1 and 0 of classification 1 being yes, 0 being no with physical, educational and gender attractiveness with the employment correlations. 
 
-Key variables found from this analysis are 2023 data of the employment rates with the physical, educational and gender attractiveness regardless of individual's skills, personalities and techniques that may support for being a success in the positions in the U.S., as it needs to be filled a clear gap of how does attractiveness influence the hiring process and being employed in the organization. So far, we found the attractiveness will effect the employment regarding skills, and characteristics that may be the outlines for the research and how it impacts on composite, interview and offers but with our focused area, we were interested in attractiveness and employment rate. The findings in this paper highlight a deep connection between beauty/attractiveness and employment in the U.S. as well as the importance points since beauty will affect an individual's first impression and provides others' feelings and stereotypes itself. By understanding this relation, it will help to acknowledge the wrong side of society and may provide solutions towards the researchers and policymakers or in general to provide the right facts of attractiveness and employment. 
+Key variables found from this analysis are 2023 data of the employment rates with the physical, educational and gender attractiveness regardless of individual's skills, personalities and techniques that may support for being a success in the positions in the U.S., as it needs to be filled a clear gap of how does attractiveness influence the hiring process and being employed in the organization. So far, we found that attractiveness will affect the employment regarding skills, and characteristics that may be the outlines for the research and how it impacts on composite, interview and offers but with our focused area, we were interested in attractiveness and employment rate. The findings in this paper highlight a deep connection between beauty/attractiveness and employment in the U.S. as well as the important points since beauty will affect an individual's first impression and provides others' feelings and stereotypes. Understanding this relationship will help to acknowledge the wrong side of society and may provide solutions for the researchers and policymakers or in general to provide the right facts of attractiveness and employment. 
 
-This paper is structured into the following sections: @sec-data as Data with Data Measurement, Data Source, and each data sets of Physical Attractiveness, Educational Attractiveness, Gender Attractiveness as presenting as table for simple and easy view of the data, and @sec-results shown as Results of the analysis data of dataset graph based on @sec-data table dataset and @sec-discussion providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
+This paper is structured into the following sections: @sec-data as Data with Data Measurement, Data Source, and each data set of Physical Attractiveness, Educational Attractiveness, and Gender Attractiveness as presented as table for a simple and easy view of the data, and @sec-results shown as Results of the analysis data of dataset graph based on @sec-data table dataset and @sec-discussion providing Discussion of the implications of findings from the data set and the weakness of this paper with its next and further steps for the future study about this topic. 
 
 # Data {#sec-data}
 
-In this paper, @sec-measure will be mentioned the data measurement used creating this paper and @sec-source will provide the resources to gather the data and information that we used to create the table sets and graphs for the results. Also, there will be three other sections of datasets are used; the first dataset, @sec-physical containing the dataset of physical attractiveness and employment in 2023 in the United States. Following section which is @sec-education shown educational attractiveness dataset as the second data. The last dataset, @sec-gender, presents the relationship between employment and gender attractiveness. 
+In this paper, @sec-measure will mention the data measurement used in creating this paper and @sec-source will provide the resources to gather the data and information that we used to create the table sets and graphs for the results. Also, there will be three other sections of datasets used; the first dataset, @sec-physical contains the dataset of physical attractiveness and employment in 2023 in the United States. The following section which is @sec-education shows the educational attractiveness dataset as the second data. The last dataset, @sec-gender, presents the relationship between employment and gender attractiveness. 
 
 ## Data Measurement {#sec-measure}
 
-This paper utilizes based on the R, as the statistical Programming language [@citeR] along with the tidyverse [@tidyverse], palmerpenguins [@palmerpenguins], arrow [@arrow], ggplot2 [@ggplot2], kableExtra [@kableExtra], readr [@readr] and knitr [@knitr] packages for generating the figures, tables and read the data for this papaer.
+This paper utilizes based on R, as the statistical Programming language [@citeR] along with the tidyverse [@tidyverse], palmerpenguins [@palmerpenguins], arrow [@arrow], ggplot2 [@ggplot2], kableExtra [@kableExtra], readr [@readr] and knitr [@knitr] packages for generating the figures, tables and read the data for this papaer.
 
 
 ## Data Source {#sec-source}
 
-This dataset, published from University of Toronto Dataverse [@USA] was extracted and collected the information by survey randomly from the United States in 2023 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" by Christopher Marquis, Andras Tilcsik and Ying Zhang in 2023 for gathering the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments with recruited 2,500 participants had hiring experiences with bachelor's degree or higher educations, with the surveys and in total, 2,020 responses as the final samples, reached up after excluded some conditions including not completed surveys, failed to verified captcha questions and finished the survey in less than a minutes [@USA]. In each datasets, 0 and 1 are indicated as no and yes what these meanings are the data sets, the variables are shown as 0 and 1 for each categories' sections:
-  - 0: not indicated as no for column that belongs to the specific categories 
-  - 1: indicated as yes for column that belongs to the specific categories 
+This dataset, published by University of Toronto Dataverse [@USA] was extracted and collected the information by survey randomly from the United States in 2023 published by the University of Toronto Dataverse as part of the paper named "Attractiveness and Attainment: Status, Beauty, and Jobs in China and the United States" by Christopher Marquis, Andras Tilcsik and Ying Zhang in 2023 for gathering the data about the attractiveness, gender and employments to compare those variables to present the relationship with the attractiveness and employments with recruited 2,500 participants had hiring experiences with bachelor's degree or higher educations, with the surveys and in total, 2,020 responses as the final samples, reached up after excluded some conditions including not completed surveys, failed to verified captcha questions and finished the survey in less than a minutes [@USA]. In each dataset, 0 and 1 are indicated as no and yes these meanings are the data sets and the variables are shown as 0 and 1 for each category's sections:
+  - 0: not indicated as no for a column that belongs to the specific categories 
+  - 1: indicated as yes for a column that belongs to the specific categories 
 
 ## Physical Attractiveness Dataset {#sec-physical}
 
-The dataset, referred to as Table 1 (@tbl-physcial), explores the relationship between physical attractiveness and employment outcomes, specifically concerning higher and lower status job positions. Published by the [@USA], this dataset comprises R Data updated through 2023 and draws from a comprehensive survey conducted among workers in the United States. Its primary objective is to elucidate the correlation between physical attractiveness and employment status, shedding light on how each factor influences the other. Notably, the dataset underscores the significance of physical beauty, a predominant aspect of attractiveness that often leaves a lasting impression and holds considerable sway in various social contexts, including the job market.
+The dataset, referred to as Table 1 (@tbl-physcial), explores the relationship between physical attractiveness and employment outcomes, specifically concerning higher and lower-status job positions. Published by the [@USA], this dataset comprises R Data updated through 2023 and draws from a comprehensive survey conducted among undergraduate students who have experienced for hiring process in the United States. Its primary objective is to explain the correlation between physical attractiveness and employment status, highlighting on how each factor influences the other. Notably, the dataset underscores the significance of physical beauty, a predominant aspect of attractiveness that often leaves a lasting impression and holds considerable sway in various social contexts, including the job market.
 
-The physical attractiveness data used in this table is designated as the photons that had included from the resumes of each participants. Highly physical attractiveness is modified as USA beauty standard while less physical attractiveness is used the actual image of university students to compare the attractiveness and perceived of people [@USA]. 
+The physical attractiveness data used in this table is designated as the photos that were included in the resumes of each participant. Highly physical attractiveness is modified as USA beauty standard while less physical attractiveness is used the actual image of university students to compare the attractiveness and perceived of people [@USA]. 
 
 The dataset below this paragraph includes the following variables:
-  - Higher Status Job: Indication as an individual holds a higher status job.
-  - Lower Status Job: Indication as an individual holds a lower status job.
-  - Highly Attractive: Indication as an individuals based on their perceived high level of physical attractiveness.
-  - Less Attractive: Indication as an individuals based on their perceived lower level of physical attractiveness.
+  - Higher Status Job: Indication that an individual holds a higher status job.
+  - Lower Status Job: Indication that an individual holds a lower status job.
+  - Highly Attractive: Indication as an individual based on their perceived high level of physical attractiveness.
+  - Less Attractive: Indication as an individual based on their perceived lower level of physical attractiveness.
 
 ```{r}
 #| label: tbl-physcial 
@@ -83,11 +83,20 @@ cleaned_data |>
   booktabs = TRUE
   )
 ```
-This dataset serves as a foundational resource for examining the intricate connection between physical attractiveness and employment outcomes. By delving into the complexities of modern job markets, it offers valuable insights into how attractiveness influences individuals, particularly within the context of hiring processes and HR team decision-making. For example, participant 1 who had highly attractiveness has higher status job while less attractiveness has lower status job like respondent 10 Table 1 (@tbl-physical). Through rigorous analysis, this dataset illuminates the nuanced dynamics at play, providing valuable guidance for stakeholders navigating the complexities of contemporary employment landscapes.
+This dataset serves as a foundational resource for examining the intricate connection between physical attractiveness and employment outcomes. By delving into the complexities of modern job markets, it offers valuable insights into how attractiveness influences individuals, particularly within the context of hiring processes and HR team decision-making. For example, participant 1 who had high attractiveness had a higher status job while less attractiveness had lower status job like respondent 10 Table 1 (@tbl-physical). This information, through thorough analysis, sheds light on the intricate dynamics at work, giving vital insight for stakeholders navigating the difficulties of modern employment and hiring process as follows the attractiveness.
 
 ## Educational Attractiveness Dataset {#sec-education}
 
-The educational attractiveness dataset, showed below in Table 2 (@tbl-education), presents the relationships of educational attractiveness in which the elite university in this paper case to figure out having better status of jobs/hiring come from attractive as educationally. 
+Another dataset, indicated in Table 2 (@tbl-education), delves into the concept of educational attractiveness and its implications on job status as the hiring outcomes. In this section, we examine the relationship between educational attractiveness and job status, particularly focusing on the influence of attending an elite and non-elite university on securing higher-status job positions as mentioned in the table. This dataset is sourced from the experimental designed survey conducted among undergraduate students in the USA, aimed at exploring how educational background, especially, university background, impacts the perception of attractiveness in the context of hiring processes, furthermore, biased to get hired by the organization. 
+
+It mentioned above, the educational attractiveness data used in this table is sourced from the educational background of the resumes of each participant. To present and compare the educational attractiveness and perception of people for the hiring process, the researchers distinguished IVY League or well-known universities as higher universities, middle universities as some people know and lower universities are most people do not know [@USA].
+
+The dataset below this paragraph includes the following variables:
+  - Higher University: Indication as an individual attended very well-known or top 20 universities.
+  - Middle University: Indication as an individual attended some or few-known universities.
+  - Lower University: Indication as an individual attended not-known universities. 
+  - Higher Status Job: Indication that an individual holds a higher status job.
+  - Lower Status Job: Indication that an individual holds a lower status job.
 
 ```{r}
 #| label: tbl-education
@@ -99,15 +108,14 @@ library(kableExtra)
 
 cleaned_data |>
   slice_sample(n = 10) |>
-  select(higheruni, middleuni,loweruni, highlyattractive, lessattractive) |>
+  select(higheruni, middleuni,loweruni, higherstatusjob, lowerstatusjob) |>
   kable(
-    col.names = c("higheruni", "middleuni","loweruni", "highlyattractive", "lessattractive"),
+    col.names = c("higheruni", "middleuni","loweruni", "higherstatusjob", "lowerstatusjob"),
   booktabs = TRUE
   )
 
 ```
-
-
+This dataset is a valuable resource for analyzing the relationship between educational attractiveness and employment outcomes during the hiring process. Examining modern job markets provides insights into how education affects hiring decisions and job prospects. For instance, most participants who attend higher universities have higher-status jobs compared with middle and lower-university participants (@tbl-educational). Which, individuals who attended elite universities may have a higher chance of landing higher-status job positions than those who attended non-elite institutions. Through this dataset analysis, this table highlights and provides valuable guidance for stakeholders who have a difficult period or feel the unfairness of the hiring process these days with education.
 
 ## Gender Attractiveness Dataset {#sec-gender}
 
@@ -138,9 +146,6 @@ physical
 #| label: fig-physical
 #| fig-cap: Physical attractives .vs Employment (2023)
 library(ggplot2)
-
-# Assuming 'cleaned_data' is your dataset
-# You might need to adjust this code according to the structure of your dataset
 
 # Select 100 random observations from the dataset
 sampled_data <- cleaned_data[sample(nrow(cleaned_data), 100), ]
